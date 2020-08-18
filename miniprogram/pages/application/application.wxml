@@ -1,0 +1,17 @@
+<!--pages/application/application.wxml-->
+<!-- <view>
+<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+  文件管理
+</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/user-active.png" type="info">
+  经验库
+</van-button>
+</view> -->
+<scroll-view scroll-y class="scrollPage">
+<van-grid column-num="2" gutter="{{ 10 }}">
+    <navigator open-type="navigate" hover-class='none' url="/pages/application/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
+     <van-grid-item icon="photo-o" text="{{item.title}}"/>
+    </navigator>
+ 
+</van-grid>
+</scroll-view>

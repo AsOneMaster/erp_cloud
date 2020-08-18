@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/company/company",
+    "pages/mine/mine",
+    "pages/application/application",
+    "pages/statistics/statistics",
+    "pages/application/experienceBase/experienceBase",
+    "pages/application/fileManagement/fileManagement",
+    "pages/application/fileManagement/fileManagement/add/add"
+  ],
+  "window": {
+    "backgroundTextStyle": "black",
+    "navigationBarBackgroundColor": "#e0620d",
+    "navigationBarTitleText": "智能制造云平台",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#e0620d",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar/index.png",
+        "selectedIconPath": "images/tabBar/onindex.png"
+      },
+      {
+        "pagePath": "pages/application/application",
+        "text": "应用",
+        "iconPath": "images/tabBar/app.png",
+        "selectedIconPath": "images/tabBar/onapp.png"
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "images/tabBar/statistics.png",
+        "selectedIconPath": "images/tabBar/onstatistics.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tabBar/mine.png",
+        "selectedIconPath": "images/tabBar/onmine.png"
+      }
+    ]
+  },
+  
+  "sitemapLocation": "sitemap.json"
+}

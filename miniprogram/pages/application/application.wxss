@@ -1,0 +1,4 @@
+/* pages/application/application.wxss */
+.scrollPage{
+  padding-top: 10px;
+}
