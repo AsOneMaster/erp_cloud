@@ -1,13 +1,16 @@
 <!--pages/application/fileManagement/fileManagement.wxml-->
  <scroll-view>
  <view>
- <block wx:for="{{document}}" wx:key="{{_id}}">
-    <van-card title="文件" thumb="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=100456567,189960518&fm=26&gp=0.jpg"/>
-  </block>
+ <block wx:for="{{document}}" wx:key="{{index}}">
+    <navigator open-type="navigate" hover-class='none' url="/pages/application/fileManagement/fileManagement/document/document?fileid={{item.fileid}}" wx:key="*this">
+        <van-card title="文件" thumb="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=100456567,189960518&fm=26&gp=0.jpg"/>
+    </navigator>
+ </block>
+
  </view>
  
 <view class="floatBtn">
- <button size="mini" bindtap="navigaTo" type="primary">+</button>
+ <van-button size="normal" round bindtap="navigaTo" type="primary">+</van-button>
 </view>
  </scroll-view>
 

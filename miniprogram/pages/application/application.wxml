@@ -9,8 +9,8 @@
 </view> -->
 <scroll-view scroll-y class="scrollPage">
 <van-grid column-num="2" gutter="{{ 10 }}">
-    <navigator open-type="navigate" hover-class='none' url="/pages/application/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
-     <van-grid-item icon="photo-o" text="{{item.title}}"/>
+    <navigator open-type="navigate" hover-class='none' url="/pages/application/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key="*this">
+     <van-grid-item icon="orders-o" text="{{item.title}}"/>
     </navigator>
  
 </van-grid>

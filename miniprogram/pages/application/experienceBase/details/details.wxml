@@ -1,0 +1,111 @@
+<!-- <view class="issue">
+  <view class="top-title">
+    <text style='padding-left: 17px;'>{{title}}</text>
+  </view>
+  <block wx:for="{{imageUrls}}" wx:key="index">
+    <van-image use-loading-slot   width="10rem"
+    height="10rem"
+    fit="contain"
+    src="{{item}}">
+      <van-loading slot="loading" type="spinner" size="20" vertical />
+    </van-image>
+  </block>
+    <rich-text nodes="{{content}}" ></rich-text>
+    <text class="cr_time" >{{createTime}} by {{issuer}}</text>
+</view>
+
+<view class="answer" style="display:{{ans_show}}">
+  <van-cell-group>
+    <van-field
+      model:value="{{ ans_content }}"
+      label="解答:"
+      size="large"
+      type="textarea"
+      placeholder="做出您的解答思路"
+      autosize
+      border="{{ true }}"
+    />
+  </van-cell-group>
+</view>
+
+<view class="foot_button" style="display:{{iss_show}}">
+  <view style="padding-bottom: 8px;">
+      <button  bindtap="back">继续编辑</button>
+  </view>
+  <view>
+    <button  type="primary" open-type="share" >指派员工</button>
+  </view>
+</view>
+
+<view class="foot_button" style="display:{{ans_show}}">
+  <view style="padding-bottom: 8px;">
+      <button   open-type="share">寻求帮助</button>
+  </view>
+  <view>
+    <button  type="primary" bindtap="ans_success" >完成回答</button>
+  </view>
+</view> -->
+<view class="detail-container">
+  <swiper indicator-dots="true" indicator-color="white" class="head-image">
+    <block wx:for="{{imageUrls}}" wx:key="index">
+      <swiper-item>
+        <image style="width:100%" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="author-date">
+    <!-- <van-image
+      round
+      class="avatar"
+      width="3rem"
+      height="3rem"
+      src="{{avatarUrl}}"
+    /> -->
+    <image class="avatar" src="{{avatarUrl}}"></image>
+    <text class="author">{{issuer}}</text>
+    <text class="const-text">发表于</text>
+    <text class="date">{{createTime}}</text>
+  </view>
+  <text class="title">{{title}}</text>
+  <view class="tool">
+    <view class="circle-img" style="display:{{iss_show}}">
+        <button  bindtap="back">
+          <image  src="/images/icon/edit.png"></image>
+        </button>   
+       <button class="share-img" open-type="share" > 
+          <image  src="/images/icon/share.png"  bindtap="onShareAppMessage"></image>
+      </button>  
+    </view>
+    <view class="horizon"></view>
+  </view>
+  <rich-text nodes="{{content}}" class="detail"></rich-text>
+</view>
+
+<view  class="answer" style="display:{{ans_show}}">
+  <van-cell-group>
+    <van-field 
+      model:value="{{ ans_content }}"
+      label="解答:"
+      size="large"
+      type="textarea"
+      placeholder="做出您的解答思路"
+      autosize
+      border="{{ false }}"
+    />
+  </van-cell-group>
+</view>
+
+<view class="foot_button" style="display:{{ans_show}}">
+    <van-button custom-style="width:50%"  open-type="share">寻求帮助</van-button>
+    <van-button custom-style="width:50%" type="primary" bindtap="ans_success" >完成回答</van-button>
+</view>
+<textarea class="detail" style="display:{{eva_show}}"  disabled>{{ans_content}}</textarea>
+<view class="author-date" style="display:{{eva_show}}">
+    <image class="ans_avatar" src="{{ ans_avatarUrl }}"></image>
+    <text class="ans_author">{{answer}}</text>
+    <text class="const-text">回答于</text>
+    <text class="date">{{ansTime}}</text>
+</view>
+<view class="foot_button" style="display:{{eva_show}}">
+    <van-button custom-style="width:100%" type="danger" bindtap="eva_success" >立即评价</van-button>
+</view>

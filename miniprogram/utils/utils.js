@@ -1,0 +1,34 @@
+/**
+ * 本文件主要是工具类函数
+ */
+
+
+ /*
+  小程序开发中request是最常用的api所以会造成很多的代码重复
+  因此将其在封装之后可以大大的减少代码的复用
+*/
+let myRequest = function(args = {url:'',methods:'GET', data:{}, success:function(){},fail:function(){}}){
+    wx.request({
+        url: args.url,
+        data: args.data,
+        header: {'content-type':'application/json'},
+        method: args.methods,
+        dataType: 'json',
+        responseType: 'text',
+        success: (res)=>{
+          console.log(res);
+          if(res.statusCode == 200){
+            // 请求成功执行回调函数
+            args.success(res)
+          }else{
+            // 请求失败执行回调函数
+            args.fail()
+          }
+        },
+    })
+}
+
+// 向外暴露接口
+module.exports = {
+  myRequest : myRequest
+}

@@ -8,7 +8,15 @@
     "pages/statistics/statistics",
     "pages/application/experienceBase/experienceBase",
     "pages/application/fileManagement/fileManagement",
-    "pages/application/fileManagement/fileManagement/add/add"
+    "pages/application/fileManagement/add/add",
+    "pages/application/fileManagement/document/document",
+    "pages/application/experienceBase/releases/releases",
+    "pages/application/experienceBase/process/process",
+    "pages/application/experienceBase/information/information",
+    "pages/application/experienceBase/editor/editor",
+    "pages/application/experienceBase/details/details",
+    "pages/application/experienceBase/evaluate/evaluate",
+    "pages/mine/myPublish/myPublish"
   ],
   "window": {
     "backgroundTextStyle": "black",
@@ -46,6 +54,5 @@
       }
     ]
   },
-  
   "sitemapLocation": "sitemap.json"
 }

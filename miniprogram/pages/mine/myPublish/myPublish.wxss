@@ -1,0 +1,74 @@
+ 
+.lijianjin {
+  width: 95%;
+  margin: auto;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  -moz-box-shadow:0px 1px 5px #d0d0d0; -webkit-box-shadow:0px 1px 5px #d0d0d0; box-shadow:0px 1px 5px #d0d0d0;
+ 
+}
+ 
+.lijianjin image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+ 
+.lijianjin .text_up {
+  color: #BEBEBE;
+  font-size: 26rpx;
+  margin-top: 20rpx;
+}
+ 
+.lijianjin .text_down {
+  font-size: 34rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+}
+ 
+/* .lijianjin .lijianjin_btn0 {
+  width: 140rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  position: absolute;
+  right:30rpx;
+  background: #eb1f23;
+  color: #fff;
+  font-size: 28rpx;
+}
+.lijianjin .lijianjin_btn1 {
+  width: 140rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  position: absolute;
+  right:30rpx;
+  background: #00a5c2;
+  color: #fff;
+  font-size: 28rpx;
+}
+.lijianjin .lijianjin_btn2 {
+  width: 140rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  position: absolute;
+  right:30rpx;
+  background: #00C261;
+  color: #fff;
+  font-size: 28rpx;
+}
+ 
+.lijianjin .lijianjin_btn:after {
+  border: none;
+} */
+.label{
+
+  position: absolute;
+  right:30rpx;
+}

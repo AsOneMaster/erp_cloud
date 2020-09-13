@@ -1,0 +1,4 @@
+{
+  "usingComponents": {"van-tag": "@vant/weapp/tag/index"},
+  "navigationBarTitleText": "我的发布"
+}

@@ -1,0 +1,17 @@
+<scroll-view>
+  <block wx:for="{{list}}" wx:key="*this">
+    <view class="lijianjin" id="{{item._id}}" data-status="{{item.status}}" bindtap="gotoEvalute">
+        <image src="{{item.imageUrl[0]}}"></image>
+        <view class="lijianjin_text">
+          <view class="text_down">{{item.title}}</view>
+          <rich-text nodes="{{item.content}}" class="text_up"></rich-text>
+        </view>
+        <!-- <button wx:if="{{item.status==0}}" class="lijianjin_btn0" >未回答</button> -->
+        <van-tag class="label" plain type="warning" wx:if="{{item.status==0}}" >未回答</van-tag>
+        <!-- <button wx:elif="{{item.status==1}}" class="lijianjin_btn1" >已回答</button> -->
+        <van-tag class="label" plain type="primary" wx:elif="{{item.status==1}}">已回答</van-tag>
+        <!-- <button wx:else class="lijianjin_btn2 " >已评价</button> -->
+        <van-tag class="label" plain type="danger" wx:else>已评价</van-tag>
+      </view>
+  </block>      
+</scroll-view>  

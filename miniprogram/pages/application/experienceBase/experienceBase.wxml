@@ -1,2 +1,56 @@
-<!--miniprogram/pages/application/experienceBase/experienceBase.wxml-->
-<text>miniprogram/pages/application/experienceBase/experienceBase.wxml</text>
+<view>
+  <block wx:if="{{showCover}}">
+    <!-- 蒙板内容 要放在蒙板的外面-->
+    <view class="hmly-menu">
+      <view class="hmly-menu-item {{currentTab === item.title ? 'hmly-menu-item-active' : ''}}" 
+      wx:for="{{navTitle}}" wx:key="index" data-index="{{index}}" id="{{item.title}}" bindtap="CoverCheck">
+        {{item.title}}
+      </view>
+    </view>
+    <!-- 蒙板 -->
+    <view class="hmly-cover" bindtap="closeCover"></view>
+  </block>
+  <block>
+    <view class="hmly-top-nav">
+      <scroll-view class="hmly-scroll-wrapper" scroll-x scroll-with-animation="true" scroll-into-view="item{{currentTab < 4 ? 0 : currentTab - 3}}" catchtouchmove="preventTouchMove" >
+        <view class="hmly-navigate-item" wx:for="{{navTitle}}" wx:key="index" data-index="{{index}}" id="{{item.title}}" bindtap="handleClick">
+          <view class="hmly-names {{currentTab === item.title? 'active' : ''}}">{{item.title}}</view>
+          <view class="hmly-currtline {{currentTab === item.title ? 'active' : ''}}"></view>
+        </view>
+      </scroll-view>
+      <!-- 下拉按钮 -->
+      <view class="hmly-pull-down" bindtap="pullDown">
+        <van-icon name="arrow-down" />
+      </view>
+    </view>
+    <!-- 对应的内容区 -->
+    <view class="hmly-content-item"  wx:for="{{list}}" wx:key="index">
+      <!-- <view class="hmly-index-number">
+        <view>{{index > 10 ? index : '0'+(index+1)}}</view>
+      </view> -->
+      <image src="{{item.imageUrl[0]}}"></image>
+      <view class="hmly-content-left">
+        <view class="hmly-content-title">{{item.title}}</view>
+        <rich-text nodes="{{item.content}}"  class="hmly-content-text"></rich-text>
+        <view class="hmly-count">
+          <view style="margin-right:35rpx;">
+            <!-- 本例中33.2亿的单位是写死的，此处应该是后端返回数据吧 -->
+            <text class="icon-video"></text>
+            <text class="">发布人：{{item.issuer}}</text>
+          </view>
+          <view  style="margin-right:75rpx;">
+            <text class="icon"></text>
+            <text class="">处理人：{{item.answer}}</text>
+          </view>
+          <view>
+            <text class="icon"></text>
+            <text class="">2020 8-28</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="foot-center">
+     <van-button size="normal" round bindtap="addExper" color="#e0620d">+</van-button>
+  </view>
+</view>

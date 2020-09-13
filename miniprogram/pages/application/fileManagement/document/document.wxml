@@ -1,0 +1,10 @@
+<!--pages/application/fileManagement/fileManagement/document/document.wxml-->
+
+
+  <view class="docimg">
+    <van-card title="文件" thumb="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=100456567,189960518&fm=26&gp=0.jpg"/>
+  </view>
+  <view class="btn">
+    <van-button bindtap="openfile" class="look" color="#7232dd" plain block>预览</van-button>
+     <van-button class="down" type="primary" block>下载</van-button>
+  </view>

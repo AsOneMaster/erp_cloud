@@ -1,0 +1,11 @@
+/* pages/application/fileManagement/fileManagement/document/document.wxss */
+.docimg{
+  position: fixed;
+  height: 20%;
+
+}
+.btn{
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+}

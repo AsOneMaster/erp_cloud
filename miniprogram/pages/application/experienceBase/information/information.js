@@ -1,6 +1,4 @@
-// pages/application/fileManagement/fileManagement.js
-const db = wx.cloud.database()
-const document = db.collection('document')
+// miniprogram/pages/application/experienceBase/information/information.js
 Page({
 
   /**
@@ -14,16 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.showLoading({
-      title: '加载中。。。',
-    })
-    document.get().then(res=>{
-      console.log(res.data)
-      this.setData({
-        document:res.data
-      },res=>{wx.hideLoading()}
-      )
-    })
+
   },
 
   /**
@@ -73,10 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  navigaTo:function(event) {
-    wx.navigateTo({
-      url: './add/add',
-    })
   }
 })

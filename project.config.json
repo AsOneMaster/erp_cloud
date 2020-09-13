@@ -2,7 +2,7 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -30,9 +30,10 @@
 	},
 	"appid": "wxabe09d52670b317b",
 	"projectname": "ERP_Cloud",
-	"libVersion": "2.8.1",
+	"libVersion": "2.12.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -66,6 +67,42 @@
 					"id": -1,
 					"name": "Add File",
 					"pathName": "pages/application/fileManagement/fileManagement/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/application/fileManagement/fileManagement/document/document",
+					"pathName": "pages/application/fileManagement/fileManagement/document/document",
+					"query": "fileid=cloud://erpcloud-yh0mw.6572-erpcloud-yh0mw-1302895069/word/1597755972307.docx",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "experienceBase",
+					"pathName": "pages/application/experienceBase/experienceBase",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "发布测试",
+					"pathName": "pages/application/experienceBase/releases/releases",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "预览页面",
+					"pathName": "pages/application/experienceBase/details/details",
+					"query": "id=8a6c3bf65f55e12d00eae26608e2bbaf&show=1&openid=omGke5C_a-SIH3eeVzQs_2DvtaLk",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "我的",
 					"scene": null
 				}
 			]
