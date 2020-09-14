@@ -51,6 +51,6 @@
     </view>
   </block>
   <view class="foot-center">
-     <van-button size="normal" round bindtap="addExper" color="#e0620d">+</van-button>
+     <van-button size="normal" round open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" bindtap="  bindGetUserInfo" color="#e0620d">+</van-button>
   </view>
 </view>

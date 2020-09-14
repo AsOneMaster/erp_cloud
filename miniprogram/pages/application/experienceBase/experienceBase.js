@@ -5,6 +5,7 @@ var utils = require('../../../utils/utils.js')
 var resut; 
 const db = wx.cloud.database()
 const experience = db.collection('experience')
+const userInfos = db.collection('userInfo')
 Page({
 
   /**
@@ -29,8 +30,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var currentTab='工作';
     var that = this;
-    experience.get().then(res=>{
+    experience.where({label:currentTab}).get().then(res=>{
       console.log(res.data)
       that.setData({
         list:res.data,
@@ -44,7 +46,7 @@ Page({
   handleClick(e) {
     let currentTab = e.currentTarget.id;
     var that = this;
-    experience.get().then(res=>{
+    experience.where({label:currentTab}).get().then(res=>{
       console.log(res.data+currentTab)
       that.setData({
         currentTab,
@@ -69,17 +71,64 @@ Page({
  // 悬浮时,实现每一个tabbar切换对应内容的原理，根据每一个tabbar的index对应数组中的数据
   CoverCheck:function(e){
     let currentTab = e.currentTarget.id;
+    var that=this;
+    experience.where({label:currentTab}).get().then(res=>{
+      console.log(res.data+currentTab)
+      that.setData({
+        currentTab,
+        list:res.data
+      })
 
-    this.setData({
-      currentTab,
-      list: null
     })
     this.closeCover()
   },
- //跳转经验贴发布页面
-  addExper:function(){
-    wx.navigateTo({
-      url: './releases/releases',
-    })
-  }
+
+    // 回调用户的头像和昵称信息
+  bindGetUserInfo:function(e) {
+      var that = this;
+      wx.getUserInfo({
+        success: function(res) {
+          console.log(e.detail.userInfo);
+          app.globalData.userInfo = e.detail.userInfo;
+          that.setData({
+            login: false,
+            avatarUrl: e.detail.userInfo.avatarUrl,
+            nickName: e.detail.userInfo.nickName
+          })
+  
+        /**
+         * 云函数调用获取用户openid
+         * 插入用户数据至云数据库(并判断数据库是否有该用户)
+         */
+      wx.cloud.callFunction({
+        name: 'getOpenid',
+        complete: res => {
+          app.globalData.openid = res.result.openid;
+          console.log('callFunction test result: ', res)
+          userInfos.where({
+            _openid:res.result.openid
+          }).count().then(res=>{
+            console.log(res.total)
+            if(res.total==0){
+              userInfos.add({
+                data:e.detail.userInfo
+              }).then(res => {
+                    
+
+                console.log(res)
+              }).catch(err=>{
+                console.log(err)
+              })
+            }
+          })
+        }
+      })
+      wx.navigateTo({
+        url: './releases/releases',
+      })
+         
+        }
+      })
+  
+    },
 })

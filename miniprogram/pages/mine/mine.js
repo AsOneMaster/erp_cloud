@@ -74,27 +74,27 @@ Page({
        * 云函数调用获取用户openid
        * 插入用户数据至云数据库(并判断数据库是否有该用户)
        */
-    // wx.cloud.callFunction({
-    //   name: 'getOpenid',
-    //   complete: res => {
-    //     app.globalData.openid = res.result.openid;
-    //     console.log('callFunction test result: ', res)
-    //     userInfos.where({
-    //       _openid:res.result.openid
-    //     }).count().then(res=>{
-    //       console.log(res.total)
-    //       if(res.total==0){
-    //         userInfos.add({
-    //           data:e.detail.userInfo
-    //         }).then(res => {
-    //           console.log(res)
-    //         }).catch(err=>{
-    //           console.log(err)
-    //         })
-    //       }
-    //     })
-    //   }
-    // })
+    wx.cloud.callFunction({
+      name: 'getOpenid',
+      complete: res => {
+        app.globalData.openid = res.result.openid;
+        console.log('callFunction test result: ', res)
+        userInfos.where({
+          _openid:res.result.openid
+        }).count().then(res=>{
+          console.log(res.total)
+          if(res.total==0){
+            userInfos.add({
+              data:e.detail.userInfo
+            }).then(res => {
+              console.log(res)
+            }).catch(err=>{
+              console.log(err)
+            })
+          }
+        })
+      }
+    })
        
       }
     })

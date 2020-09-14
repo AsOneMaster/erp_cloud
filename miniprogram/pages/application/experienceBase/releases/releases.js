@@ -157,9 +157,9 @@ onChange(event) {
             evaluate:'',//评价内容
           },
           success:res1=>{
-            console.log(res1._id);
+            console.log(res1);
             wx.navigateTo({
-              url: '../details/details?id='+res1._id+'&show=0'+'&openid='+res1._openid
+              url: '../details/details?id='+res1._id+'&show=0'+'&openid='+app.globalData.openid
             })
           }
         })

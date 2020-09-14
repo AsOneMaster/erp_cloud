@@ -34,6 +34,7 @@ Page({
       }
     })
 
+  
     /**
      * 注意小程序中if()只要之中有数值都会识别为真
      */
@@ -46,6 +47,20 @@ Page({
         eva_show:'none'
       })
     }else if(show==1){
+
+          /**
+       * 云函数调用获取回答者用户openid
+       * 插入用户数据至云数据库(并判断数据库是否有该用户)
+       */
+      wx.cloud.callFunction({
+        name: 'getOpenid',
+        complete: res => {
+          app.globalData.openid = res.result.openid;
+          console.log('callFunction test result: ', res)
+
+        }
+      })
+
       this.setData({         //显示回答者页面
         openid:openid,      
         _id:id,
@@ -54,6 +69,8 @@ Page({
         eva_show:'none'
       })
     }else{
+    
+
       this.setData({         //准备评价页面
         openid:openid,      
         _id:id,
@@ -129,7 +146,7 @@ Page({
   ans_success(){
     const date = new Date()
     const ansTime = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getMinutes()}`
-    console.log(this.data.ans_content+app.globalData.userInfo.nickName)
+    console.log(this.data.ans_content+app.globalData.openid)
     //上传回答,更新数据库 doc()中填写_id
     experience.doc(this.data._id).update({
      data:{

@@ -1,3 +1,4 @@
+const app=getApp();
 const db = wx.cloud.database()
 const experience = db.collection('experience')
 Page({
@@ -35,7 +36,7 @@ Page({
     })
   },
   /**
-   * 如果已经回答就可以静茹评价页面
+   * 如果已经回答就可以进入评价页面
    */
   gotoEvalute(e){
     let id=e.currentTarget.id;
@@ -54,7 +55,7 @@ Page({
       })
     }else{
       wx.navigateTo({
-        url: '/pages/application/experienceBase/details/details?id='+id+'&show=3'+'&openid='+this.data.openid,
+        url: '/pages/application/experienceBase/details/details?id='+id+'&show=3'+'&openid='+app.globalData.openid,
         success: (result) => {},
         fail: (res) => {},
         complete: (res) => {},
