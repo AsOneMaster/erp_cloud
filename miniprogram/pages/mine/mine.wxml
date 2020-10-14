@@ -1,14 +1,10 @@
 <!--pages/mine/mine.wxml-->
 <!-- pages/user/user.wxml -->
 <block wx:if="{{login}}">
-	<!-- logo -->
-	<!-- <view class="hmly-logo">
-		<image class="hmly-logo-img" src="/image/logo.png" mode="widthFix"></image>
-	</view> -->
 	<!-- 登录按钮 -->
 	<view class="hmly-login-button">
 		<!-- 在本小程序中只实现了微信登录 -->
-		<view class="hmly-wechat-login" style="margin:0 auto;text-align:center">
+		<view class="hmly-wechat-login" >
 			<van-button round type="primary" size="large" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" plain>
 				<text>微信登录</text> 
 			</van-button>

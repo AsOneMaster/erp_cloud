@@ -151,3 +151,14 @@
   border-radius: 50%;
   margin-right: 40rpx;
 }
+.hmly-login-button{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%; 
+}
+.hmly-wechat-login{
+  width: 100%;
+}

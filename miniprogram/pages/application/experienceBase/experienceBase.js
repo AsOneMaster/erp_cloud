@@ -20,9 +20,9 @@ Page({
       {title:'营销'},
       {title:'运营'},
       {title:'创新'},
-      {title:'发现问题'},
-      {title:'发现问题'},
-      {title:'发现问题'}
+      {title:'待添加1'},
+      {title:'待添加2'},
+      {title:'待添加3'}
     ]
   },
 

@@ -25,6 +25,43 @@ Page({
     })
   },
 
+  // 标签
+    label:function(e){
+       console.log(e)
+       var that = this;
+       that.setData({
+         attitude:!e.currentTarget.dataset.index
+       })
+     },
+      label1: function (e) {
+       console.log(e)
+       var that = this;
+       that.setData({
+         time: !e.currentTarget.dataset.index
+       })
+     },
+      label2: function (e) {
+        console.log(e)
+        var that = this;
+        that.setData({
+          efficiency: !e.currentTarget.dataset.index
+        })
+      },
+       label3: function (e) {
+        console.log(e)
+        var that = this;
+       that.setData({
+          environment: !e.currentTarget.dataset.index
+        })
+      },
+       label4: function (e) {
+         console.log(e)
+        var that = this;
+         that.setData({
+           professional: !e.currentTarget.dataset.index
+         })
+       },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

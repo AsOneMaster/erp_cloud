@@ -18,15 +18,15 @@
       内容
     </view>
     <view class='right'>
-      <text bindtap='label' class="{{attitude===true ? 'labelColor':''}}" data-index="{{attitude}}">服务态度好</text>
-      <text bindtap='label1' class="{{time===false? 'labelColor':''}}" data-index="{{time}}">排队时间短</text>
+      <text bindtap='label' class="{{attitude===true ? 'labelColor':''}}" data-index="{{attitude}}">效果好</text>
+      <text bindtap='label1' class="{{time===false? 'labelColor':''}}" data-index="{{time}}">处理时间快</text>
       <text bindtap='label2' class="{{efficiency===false?'labelColor':''}}" data-index="{{efficiency}}">效率高</text>
-      <text bindtap='label3' class="{{environment===false?'labelColor':''}}" data-index="{{environment}}">门店环境好</text>
+      <text bindtap='label3' class="{{environment===false?'labelColor':''}}" data-index="{{environment}}">细节</text>
       <text bindtap='label4' class="{{professional===false?'labelColor':''}}" data-index="{{professional}}">很专业</text>
     </view>
   </view>
   <!--图片-->
-  <view class='picture'>
+  <!-- <view class='picture'>
     <view class='left'>
       图片
     </view>
@@ -37,7 +37,7 @@
        </view>
       <image src='/pages/service/img/add.png' class='add' bindtap='choose'></image>
     </view>
-  </view>
+  </view> -->
 </view>
 <!--textarea-->
 <view class="conts">

@@ -27,6 +27,17 @@ Page({
   },
 
   /**
+   * 进入指定id文件页面
+   */
+  gotodoc(e){
+    let id=e.currentTarget.id;
+    console.log(id+'---------')
+    wx.navigateTo({
+      url: '/pages/application/fileManagement/document/document?id='+id,
+  })
+},
+
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
